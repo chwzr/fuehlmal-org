@@ -7,9 +7,9 @@ export default function Home() {
   const [user, setUser] = useState({ auth: false });
 
   useEffect(async () => {
-    let res = await axios.get('/api/login', { auth: true });
+    let res = await axios.get('/api/login', { authed: true });
     setUser(res.data);
-  });
+  }, []);
 
   return (
     <div className={styles.container}>

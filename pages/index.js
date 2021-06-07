@@ -14,7 +14,7 @@ export default function Home() {
     setUser(tuser);
     if (tuser.id) {
       await axios.post('/api/login', { login: true, tuser });
-      router.push('/ticket');
+      router.push('/ticket/' + tuser.id);
     }
   };
 
