@@ -25,13 +25,17 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Welcome to fühl mal!</h1>
+        <h1 className={styles.title}>fühl mal!</h1>
+        <div className={styles.grid}>
+          <div className={styles.card}>
+            {/* <h3>Hello</h3> */}
+            <p>Please sign in with telegram to claim your free ticket and get updates via our Telegram bot!</p>
+          </div>
+        </div>
         <TelegramLoginButton
           dataOnauth={handleTelegramResponse}
           botName="fuehl_bot"
         />
-
-        <pre>{JSON.stringify(user, 0, 2)}</pre>
       </main>
 
       <footer className={styles.footer}>

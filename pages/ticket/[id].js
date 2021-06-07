@@ -120,7 +120,7 @@ const Home = ({ ticket }) => {
     </div>
   </div>
   <div className="ticket-visual_ticket-number-wrapper__3mFTe">
-    <div className="ticket-visual_ticket-number__sz5XD">#{JSON.stringify(ticket.id).slice(0, 6)}</div>
+    <div className="ticket-visual_ticket-number__sz5XD">#{JSON.stringify(ticket.id)}</div>
   </div>
   <div className="ticket-visual_ticket-number-wrapper__xxx">
     <div className="ticket-visual_ticket-number__sz5XD">
