@@ -6,8 +6,8 @@ module.exports = {
       fs: 'empty',
       crypto: 'empty',
       net: 'empty',
-      tls: 'empty',
-      dns: 'empty'
+      tls: 'empty'
+      //dns: 'empty'
     };
     return config;
   }
