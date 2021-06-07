@@ -5,14 +5,10 @@ import TelegramLoginButton from 'react-telegram-login';
 
 export default function Home() {
   const [user, setUser] = useState({ auth: false });
-  const router = useRouter();
 
   const handleTelegramResponse = tuser => {
     console.log(tuser);
     setUser(tuser);
-    if (tuser.id) {
-      router.push('/ticket');
-    }
   };
 
   return (
@@ -22,7 +18,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Welcome to fühl mal!</h1>
+        <h1 className={styles.title}>Claim your Ticket!</h1>
         <TelegramLoginButton
           dataOnauth={handleTelegramResponse}
           botName="fuehl_bot"
