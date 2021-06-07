@@ -18,7 +18,6 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Your Ticket, {user.first}!</h1>
 
         <pre>{JSON.stringify(user, 0, 2)}</pre>
       </main>

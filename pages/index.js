@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>fühl mal!</title>
       </Head>
 
       <main className={styles.main}>
