@@ -17,7 +17,8 @@ const Home = ({ ticket }) => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Your Ticket,  {ticket.first_name}!</h1>
+        <h1 className={styles.title}>Your Ticket,  {ticket.first_name}! </h1>
+        <br/> <br/>
         
         <div class="ticket-visual_visual__FGIcy ticket-visual_visual-vertical__1dDaT" >
   <div class="ticket-visual_ticket__2wdyX">
