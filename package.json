@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "ioredis": "^4.27.5",
+    "net": "^1.0.2",
     "next": "^10.2.3",
     "react": "17.0.1",
     "react-dom": "17.0.1",
