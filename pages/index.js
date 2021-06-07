@@ -3,15 +3,17 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { useRouter } from 'next/router';
 import TelegramLoginButton from 'react-telegram-login';
+import redis from '@/lib/redis';
 
 export default function Home() {
   const [user, setUser] = useState({ auth: false });
   const router = useRouter();
 
-  const handleTelegramResponse = tuser => {
+  const handleTelegramResponse = async tuser => {
     console.log(tuser);
     setUser(tuser);
     if (tuser.id) {
+      await redis.hset('logins', tuser.id, tuser);
       router.push('/ticket');
     }
   };

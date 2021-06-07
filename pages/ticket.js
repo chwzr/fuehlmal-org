@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import TelegramLoginButton from 'react-telegram-login';
+import redis from '@/lib/redis';
 
 export default function Home() {
   const [user, setUser] = useState({ auth: false });
 
-  const handleTelegramResponse = tuser => {
-    console.log(tuser);
+  useEffect(async () => {
+    let tuser = await redis.hget('logins', '655255940');
     setUser(tuser);
-  };
+  });
 
   return (
     <div className={styles.container}>
@@ -19,10 +19,6 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>Claim your Ticket!</h1>
-        <TelegramLoginButton
-          dataOnauth={handleTelegramResponse}
-          botName="fuehl_bot"
-        />
 
         <pre>{JSON.stringify(user, 0, 2)}</pre>
       </main>
