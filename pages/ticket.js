@@ -7,8 +7,8 @@ export default function Home() {
   const [user, setUser] = useState({ auth: false });
 
   useEffect(async () => {
-    let tuser = await axios.get('/api/login', { auth: true });
-    setUser(tuser);
+    let res = await axios.get('/api/login', { auth: true });
+    setUser(res.data);
   });
 
   return (
