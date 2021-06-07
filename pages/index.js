@@ -1,10 +1,13 @@
+import React, { useState } from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import TelegramLoginButton from 'react-telegram-login';
 
 export default function Home() {
-  const handleTelegramResponse = user => {
-    console.log(user);
+  const [user, setUser] = useState({ auth: false });
+  const handleTelegramResponse = tuser => {
+    console.log(tuser);
+    setUser(tuser);
   };
 
   return (
@@ -19,15 +22,17 @@ export default function Home() {
           dataOnauth={handleTelegramResponse}
           botName="fuehl_bot"
         />
+
+        <pre>{JSON.stringify(user, 0, 2)}</pre>
       </main>
 
       <footer className={styles.footer}>
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://fuehlmal.org"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{' fuehl mal'}
         </a>
       </footer>
     </div>
