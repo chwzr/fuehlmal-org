@@ -9,7 +9,7 @@ export default async (req, res) => {
 
     console.log(req.body.tuser.id)
     db = await redis.hset('logins', req.body.tuser.id, JSON.stringify(req.body.tuser));
-    bot.sendMessage(req.body.tuser.id, "Thanks for joining us! We will send you the details about next fühl mal soon via this channel! Rave on!")
+    bot.sendMessage(req.body.tuser.id, "Hey little raver! Thanks for your support. You will get all the information from us here as soon as there is any!")
 
   res.json(db);
 };
