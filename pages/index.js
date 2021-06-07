@@ -3,7 +3,7 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { useRouter } from 'next/router';
 import TelegramLoginButton from 'react-telegram-login';
-import redis from '@/lib/redis';
+import axios from 'axios';
 
 export default function Home() {
   const [user, setUser] = useState({ auth: false });
@@ -13,7 +13,7 @@ export default function Home() {
     console.log(tuser);
     setUser(tuser);
     if (tuser.id) {
-      await redis.hset('logins', tuser.id, tuser);
+      await axios.post('/api/login', { login: true, tuser });
       router.push('/ticket');
     }
   };

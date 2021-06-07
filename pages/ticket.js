@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import redis from '@/lib/redis';
+import axios from 'axios';
 
 export default function Home() {
   const [user, setUser] = useState({ auth: false });
 
   useEffect(async () => {
-    let tuser = await redis.hget('logins', '655255940');
+    let tuser = await axios.get('/api/login', { auth: true });
     setUser(tuser);
   });
 
