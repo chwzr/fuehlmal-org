@@ -76,6 +76,9 @@ export default function Home() {
         <button onClick={sendMessageGroup}>send to groups</button>
 
         </div>
+        <br/>
+        <br/>
+        <br/>
         <div className="table">
           {users.map(user=>(
             <div className="row" key={user.id}>

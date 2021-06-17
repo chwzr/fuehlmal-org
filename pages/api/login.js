@@ -11,8 +11,14 @@ export default async (req, res) => {
     let tuser = req.body.tuser
     tuser.addedOn = Date.now();
 
+    let send = await redis.hget('logins', req.body.tuser.id);
+    if(send){
+      bot.sendMessage(req.body.tuser.id, 
+      "Hey! Danke für deinen support :] Hier wirst du alle Informationen zum fühl mal bekommen!")
+    }
+
     db = await redis.hset('logins', req.body.tuser.id, JSON.stringify(tuser));
-    bot.sendMessage(req.body.tuser.id, "Hey little raver! Thanks for your support. You will get all the information from us here as soon as there is any!")
+    
 
   res.json(db);
 };
