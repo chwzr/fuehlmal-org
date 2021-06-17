@@ -77,7 +77,7 @@ export default function Home() {
 
         </div>
         <div className="table">
-          {users.map(user=>{
+          {users.map(user=>(
             <div className="row" key={user.id}>
               <div className="col">
               <img className="ticket-photo" src={user.photo_url} alt="you" />
@@ -92,7 +92,7 @@ export default function Home() {
                 {user.addedOn}
               </div>
             </div>
-          })}
+          ))}
         </div>
 
 
