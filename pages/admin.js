@@ -5,7 +5,7 @@ import axios from 'axios';
 import Select from 'react-select';
 
 export default function Home() {
-  const [users, setUsers] = useState()
+  const [users, setUsers] = useState([])
   const [selectedUsers, setSelectedUsers] = useState()
   const [message, setMessage] = useState()
   const [res, setRes] = useState()
