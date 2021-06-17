@@ -209,3 +209,14 @@ button{
   width: calc(100% - 1rem);
   height: 3rem;
 }
+
+
+.table{
+  display: flex;
+  flex-direction: column;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+}

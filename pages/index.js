@@ -61,8 +61,10 @@ export default function Home() {
         </h1>
         <div className={styles.grid}>
           <div className={styles.card}>
-            {/* <h3>Hello</h3> */}
-            <p>Please sign in to claim your free ticket and get updates via our Telegram bot!</p>
+            <p>Bitte melde dich mit Telegram an um Updates über unseren Telegram Bot zu bekommen!</p>
+          </div>
+          <div className={styles.card}>
+            <p>Please sign in to get updates via our Telegram bot!</p>
           </div>
         </div>
         <TelegramLoginButton

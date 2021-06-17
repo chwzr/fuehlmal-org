@@ -36,6 +36,18 @@ export default function Home() {
     setRes(xx.data)
   }
 
+  const sendMessageGroup = async () => {
+    alert("send message!")
+    let ids = ["-1001278683147", "-1001304399267"]
+    let x = {
+      ids,
+      message
+    }
+    console.log(x)
+    let xx = await axios.post('/api/sendmessage', x);
+    setRes(xx.data)
+  }
+
 
 
   return (
@@ -60,8 +72,29 @@ export default function Home() {
           />
         <textarea value={message} onChange={updateMessage} rows={5}/>
 
-        <button onClick={sendMessage}>send</button>
+        <button onClick={sendMessage}>send to users</button>
+        <button onClick={sendMessageGroup}>send to groups</button>
+
         </div>
+        <div className="table">
+          {users.map(user=>{
+            <div className="row" key={user.id}>
+              <div className="col">
+              <img className="ticket-photo" src={user.photo_url} alt="you" />
+              </div>
+              <div className="col">
+                {user.username}
+              </div>
+              <div className="col">
+                {user.first_name}
+              </div>
+              <div className="col">
+                {user.addedOn}
+              </div>
+            </div>
+          })}
+        </div>
+
 
         <pre>
           {JSON.stringify(res, 0, 2)}

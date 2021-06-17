@@ -17,7 +17,7 @@ const Home = ({ ticket }) => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Your Ticket,  {ticket.first_name}! </h1>
+        <h1 className={styles.title}>Your Update Ticket,  {ticket.first_name}! </h1>
         <br /> <br />
 
         <div class="ticket-visual_visual__FGIcy ticket-visual_visual-vertical__1dDaT" >
@@ -54,7 +54,7 @@ const Home = ({ ticket }) => {
                   <path d="M0,-5.111L0.367,-5.111C0.419,-5.111 0.469,-5.098 0.514,-5.072L3.856,-3.159L4.181,-2.371C4.181,-2.371 0.369,-0.438 0,-0.266C-0.523,0 -0.898,-0.375 -0.783,-0.893C-0.595,-1.804 0,-5.111 0,-5.111" style={{ fill: 'white', fillRule: 'nonzero' }}>
                   </path></g>
                 <g transform="matrix(0.432249,0,0,0.432249,-29.7019,-45.5378)">
-                  <text id="date" x="96.67px" y="272.891px" style={{ fontFamily: '"BergenText-Regular", "Bergen"', fontSize: '20px', fill: 'white' }}>XX.-XX.XX.XX</text>
+                  <text id="date" x="96.67px" y="272.891px" style={{ fontFamily: '"BergenText-Regular", "Bergen"', fontSize: '20px', fill: 'white' }}>XX.-XX.XX.2021</text>
                 </g>
               </g>
 
@@ -115,7 +115,7 @@ const Home = ({ ticket }) => {
               </span>
                 <div className="ticket-profile_text__39qQ4">
                   <p className="ticket-profile_name__3GMze undefined"><span className="ticket-profile_skeleton__2Z9jI ticket-profile_wrapper__yxCG8 ticket-profile_ellipsis__1qVPt">{ticket.first_name}</span></p>
-                  <p className="ticket-profile_username__3y92X"><span className="ticket-profile_skeleton__2Z9jI ticket-profile_wrapper__yxCG8 ticket-profile_ellipsis__1qVPt">{ticket.username}</span>
+                  <p className="ticket-profile_username__3y92X"><span className="ticket-profile_skeleton__2Z9jI ticket-profile_wrapper__yxCG8 ticket-profile_ellipsis__1qVPt">{"@" + (ticket.username || "")}</span>
                   </p>
                 </div>
               </div>
