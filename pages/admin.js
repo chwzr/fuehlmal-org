@@ -32,7 +32,7 @@ export default function Home() {
       ids,
       message: unescape(message)
     }
-    console.log(x)
+    console.log(JSON.stringify(x))
     let xx = await axios.post('/api/sendmessage', JSON.stringify(x));
     setRes(xx.data)
   }
