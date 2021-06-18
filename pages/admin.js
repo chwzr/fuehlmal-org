@@ -21,6 +21,7 @@ export default function Home() {
   };
 
   const updateMessage = e => {
+    console.log(e.target.value)
     setMessage(e.target.value)
   }
 
