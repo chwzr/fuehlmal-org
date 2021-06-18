@@ -2,12 +2,12 @@ import bot from '@/lib/telegram';
 
 
 export default async (req, res) => {
-  let r = JSON.parse(req.body)
+  // let r = JSON.parse(req.body)
 
   let resx = []
 
-  for (const id of r.ids) {
-    let x = await bot.sendMessage(id, r.message)
+  for (const id of req.body.ids) {
+    let x = await bot.sendMessage(id, req.body.message)
     resx.push(x.data)
   }
 

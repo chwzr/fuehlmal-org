@@ -33,7 +33,7 @@ export default function Home() {
       message: unescape(message)
     }
     console.log(JSON.stringify(x))
-    let xx = await axios.post('/api/sendmessage', JSON.stringify(x));
+    let xx = await axios.post('/api/sendmessage', x);
     setRes(xx.data)
   }
 
