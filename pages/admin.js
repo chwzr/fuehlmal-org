@@ -27,6 +27,7 @@ export default function Home() {
 
   const sendMessage = async () => {
     alert("send message!")
+    console.log(message)
     let ids = selectedUsers.map(user => user.id)
     let x = {
       ids,
