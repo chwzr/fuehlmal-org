@@ -3,6 +3,7 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import axios from 'axios';
 import Select from 'react-select';
+import {format} from 'date-fns'
 
 export default function Home() {
   const [users, setUsers] = useState([])
@@ -94,7 +95,7 @@ export default function Home() {
                 {user.first_name}
               </div>
               <div className="col">
-                {user.addedOn}
+                { format(user.addedOn || user.auth_date, "dd-MM-yyyy 'T' HH:mm")}
               </div>
             </div>
           ))}

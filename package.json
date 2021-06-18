@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "date-fns": "^2.22.1",
     "ioredis": "^4.27.5",
     "net": "^1.0.2",
     "next": "^10.2.3",

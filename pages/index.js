@@ -67,6 +67,7 @@ export default function Home() {
             <p>Please sign in to get updates via our Telegram bot!</p>
           </div>
         </div>
+        <br/>
         <TelegramLoginButton
           dataOnauth={handleTelegramResponse}
           botName="fuehl_bot"
