@@ -21,13 +21,13 @@ export default function Home() {
   };
 
   const updateMessage = e => {
-    console.log(e.target.value)
+    // console.log(e.target.value)
     setMessage(e.target.value)
   }
 
   const sendMessage = async () => {
     alert("send message!")
-    console.log(message)
+    // console.log(message)
     let ids = selectedUsers.map(user => user.id)
     // let x = {
     //   ids,
