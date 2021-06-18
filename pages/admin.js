@@ -41,7 +41,7 @@ export default function Home() {
 
   const sendMessageGroup = async () => {
     alert("send message!")
-    let ids = ["-1001278683147", "-1001304399267"]
+    let ids = ["1001278683147", "1001304399267"]
     let x = {
       ids,
       message
