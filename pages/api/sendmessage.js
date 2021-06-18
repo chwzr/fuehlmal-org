@@ -7,7 +7,7 @@ export default async (req, res) => {
   let resx = []
 
   for (const id of req.body.ids) {
-    let x = await bot.sendMessage(id, req.body.message)
+    let x = await bot.sendMessage(id, req.body.message.s.replace(/\\\//g, "/"))
     resx.push(x.data)
   }
 
