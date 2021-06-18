@@ -29,12 +29,12 @@ export default function Home() {
     alert("send message!")
     console.log(message)
     let ids = selectedUsers.map(user => user.id)
-    let x = {
-      ids,
-      message: unescape(message)
-    }
-    console.log(JSON.stringify(x))
-    let xx = await axios.post('/api/sendmessage', x);
+    // let x = {
+    //   ids,
+    //   message: unescape(message)
+    // }
+    console.log({ids: ids, message: message})
+    let xx = await axios.post('/api/sendmessage', {ids: ids, message: message});
     setRes(xx.data)
   }
 
