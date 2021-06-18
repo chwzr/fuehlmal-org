@@ -29,7 +29,7 @@ export default function Home() {
     let ids = selectedUsers.map(user => user.id)
     let x = {
       ids,
-      message
+      unescape(message)
     }
     console.log(x)
     let xx = await axios.post('/api/sendmessage', x);

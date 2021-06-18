@@ -139,7 +139,7 @@ const Home = ({ ticket }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' fuehl mal'}
+          Powered by{' fühl mal!'}
         </a>
       </footer>
     </div >
