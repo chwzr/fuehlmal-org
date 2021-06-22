@@ -14,7 +14,8 @@ export default function Home() {
   useEffect(async ()=>{
     let x = await axios.get('/api/getall')
     console.log(x.data)
-    setUsers(x.data)
+    let a = x.data.sort((a, b) => (b.addedOn || b.auth_date).toString().localeCompare((a.addedOn || a.auth_date)));
+    setUsers(a)
   }, [])
 
   const update = (inputValue) => {
@@ -60,7 +61,7 @@ export default function Home() {
         <title>Admin</title>
       </Head>
 
-      <main className={styles.main}>
+      <main className={styles.admin}>
         <h1 className={styles.title}>Welcome to admin!</h1>
         <div className="admin-scroller">
         <Select
@@ -71,12 +72,12 @@ export default function Home() {
             className="basic-multi-select"
             classNamePrefix="select"
             getOptionValue={option => option['id']}
-            getOptionLabel={option => option['username']}
+            getOptionLabel={option => (option.username || option.first_name) + " - " + option.id}
             onChange={update}
           />
         <textarea value={message} onChange={updateMessage} rows={5}/>
 
-        <button onClick={sendMessage}>send to users</button>
+        <button onClick={sendMessage}>send to selected users</button>
         <button onClick={sendMessageGroup}>send to groups</button>
 
         </div>
@@ -87,7 +88,9 @@ export default function Home() {
           {users.map(user=>(
             <div className="row" key={user.id}>
               <div className="col">
-              <img className="ticket-photo" src={user.photo_url} alt="you" />
+                {user.photo_url && (
+                  <img className="ticket-photo" src={user.photo_url} alt="you" />
+                )}
               </div>
               <div className="col">
                 {user.username}

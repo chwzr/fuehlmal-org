@@ -1,10 +1,12 @@
-:root {
-  --size:1;
-}
+
 
 @font-face {
   font-family: "Bergen";
   src: url("/BergenText-Regular.otf") format("otf");
+}
+
+:root{
+  --size:1;
 }
 
 html,
@@ -214,7 +216,8 @@ button{
 .table{
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
+  margin: 1rem;
 }
 
 .row{
@@ -222,4 +225,12 @@ button{
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 1rem 0;
+}
+
+.col{
+  flex: 1;
+  justify-content: start;
 }
