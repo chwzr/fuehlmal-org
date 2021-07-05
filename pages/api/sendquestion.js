@@ -23,11 +23,16 @@ export default async (req, res) => {
   };
 
   // let db = await redis.hset('questions', d.answers[0].callback_data.qid, JSON.stringify({ids: d.ids, question: d.question}));
-
+  let rr = []
   // reply when user sends a message, and send him our inline keyboard as well
   for (const id of req.body.ids) {
-    await slimbot.sendMessage(id, d.question, optionalParams);
+    try {
+      let r = await slimbot.sendMessage(id, d.question, optionalParams);
+      rr.push(r)
+    } catch (e) {
+      rr.push(e)
+    }
   }
 
-  res.json({ok: true});
+  res.json({ok: true, rr});
 };
