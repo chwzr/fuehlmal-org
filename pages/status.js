@@ -24,10 +24,10 @@ export default function Home() {
     setAnswers(x.data)
     let c = { yes: 0, no: 0 }
     x.data.forEach(a => {
-      if (a.data == "SupportJa") {
+      if (a.data == "EventJa") {
         c.yes++
       }
-      if (a.data == "SupportNein") {
+      if (a.data == "EventNein") {
         c.no++
       }
     })
@@ -66,7 +66,7 @@ export default function Home() {
             </p>
           </div>
           <div className={styles.card}>
-            <p>Du bist kreativ, möchtest uns unterstützen, und schon vor dem nächsten fühl mal! ein schönes Wochenende mit uns verbringen?</p>
+            <p>fühl  mal wieder teilnahme</p>
             Ja: {support.yes}<br />
             Nein: {support.no} <br />
             Total: {support.yes + support.no}<br />
