@@ -109,6 +109,26 @@ export default function Home() {
     let xx = await axios.post('/api/sendquestion', {ids, question: message, answers: answers});
     setRes(xx.data.rr)
   }
+  const sendMessageAllyes = async () => {
+    let ids = []
+    
+    
+    answers.map(a=>{
+      if(a.data == "EventJa"){
+        ids.push(a.from.id)
+      }
+    })
+    console.log(ids)
+    alert("send message all!")
+
+
+
+
+
+  
+    let xx = await axios.post('/api/sendmessage', {ids, message: message});
+    setRes(xx)
+  }
 
 
 
@@ -148,6 +168,7 @@ export default function Home() {
 
         <button onClick={sendMessage}>send to me</button>
         <button onClick={sendMessageAll}>send to all</button>
+        <button onClick={sendMessageAllyes}>send to all event yes</button>
 
         </div>
         <br/>
