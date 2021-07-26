@@ -8,7 +8,7 @@ export default async (req, res) => {
   let resx = []
 
   let optionalParams = {
-    parse_mode: "Markdown"
+    parse_mode: "HTML"
     };
 
   for (const id of req.body.ids) {
