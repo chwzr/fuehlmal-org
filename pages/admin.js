@@ -53,6 +53,18 @@ export default function Home() {
     setRes(xx.data)
   }
 
+  const sendMessageGroupWfk = async () => {
+    alert("send message!")
+    let ids = [-410187265]
+    let x = {
+      ids,
+      message
+    }
+    console.log(x)
+    let xx = await axios.post('/api/sendmessage', x);
+    setRes(xx.data)
+  }
+
 
 
   return (
@@ -79,6 +91,7 @@ export default function Home() {
 
         <button onClick={sendMessage}>send to selected users</button>
         <button onClick={sendMessageGroup}>send to groups</button>
+        <button onClick={sendMessageGroupWfk}>send to wfk</button>
 
         </div>
         <br/>
