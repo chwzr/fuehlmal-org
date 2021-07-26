@@ -11,6 +11,8 @@ export default async (req, res) => {
     parse_mode: "HTML"
     };
 
+    console.log(req.body.message)
+
   for (const id of req.body.ids) {
     // let x = await bot.sendMessage(id, req.body.message)
     let r = await slimbot.sendMessage(id, req.body.message, optionalParams);
